@@ -7,7 +7,7 @@
             Console.WriteLine("Welcome to the Guessing Game!");
             Random random = new Random();
             String choice;
-            int answer = random.Next(1, 101);//1 higher than 100 because the upper band is exclusive
+           // int answer = random.Next(1, 101);//1 higher than 100 because the upper band is exclusive
             do
             {
                 Console.WriteLine("I'm thinking of a number from 1 to 100." +
@@ -19,6 +19,7 @@
                 int tries = 0;
                 bool correctGuess = false;
                 //int difference = Math.Abs(answer - entry);
+                int answer = random.Next(1, 101);//1 higher than 100 because the upper band is exclusive
                 while (!correctGuess)
                 {
                     Console.Write("Enter your number: ");
@@ -50,6 +51,7 @@
                                 Console.WriteLine("Yeah, definitely a numbskull.");
                                 Console.WriteLine($"You got it right in {tries} guesses!\n");
                             }
+                            correctGuess = true;
                         }
                         else if (entry > answer)
                         {
